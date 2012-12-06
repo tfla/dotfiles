@@ -1,0 +1,9 @@
+
+[roxterm profile]
+hide_menubar=1
+always_show_tabs=0
+scrollbar_pos=0
+font=Monospace 8
+show_resize_grip=0
+height=26
+width=80

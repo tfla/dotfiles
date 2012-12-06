@@ -1,0 +1,37 @@
+!{{{ XFT
+Xft.dpi:	96
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.hintstyle:	hintfull
+Xft.rgba:	rgb
+!}}}
+
+!{{{ XTERM
+xterm*internalBorder:	0
+xterm*loginShell:	true
+xterm*scrollBar:	false
+xterm*cursorBlink:	false
+!xterm*geometry:	80x26
+xterm*saveLines:	65535
+xterm*dynamicColors:	on
+xterm*highlightSelection:	true
+! Appearance
+xterm*background:	#3f3f3f
+xterm*foreground:	#dcdccc
+xterm*color0:		#1E2320
+xterm*color1:		#705050
+xterm*color2:		#60B48A
+xterm*color3:		#DFAF8F
+xterm*color4:		#506070
+xterm*color5:		#DC8CC3
+xterm*color6:		#8CD0D3
+xterm*color7:		#DCDCCC
+xterm*color8:		#709080
+xterm*color9:		#DCA3A3
+xterm*color10:		#C3BF9F
+xterm*color11:		#F0DFAF
+xterm*color12:		#94BFF3
+xterm*color13:		#EC93D3
+xterm*color14:		#93E0E3
+xterm*color15:		#FFFFFF
+!}}}
