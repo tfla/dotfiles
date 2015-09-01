@@ -180,18 +180,3 @@ client.focused            #9fbff3      #506070      #dcdccc
 client.focused_inactive   #3f3f3f      #3f3f3f      #dcdccc
 client.unfocused          #3f3f3f      #3f3f3f      #dcdccc
 client.urgent             #705050      #dca3a3      #dcdccc
-
-##
-## Starting a scratchpad and moving it to a hidden window.
-##
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-
-# starting a specially named term automatically 
-exec --no-startup-id roxterm -T scratchpad -e /usr/bin/vim
-
-# move this to scratchpad, if active
-for_window [class="xterm" instance="scratchpad"] move scratchpad
