@@ -17,8 +17,8 @@ servers = (
 );
 
 chatnets = {
-  fnode  = { type = "IRC"; autosendcmd = "/msg nickserv id xxx; max_msgs = "3"; };
-  oftc   = { type = "IRC"; autosendcmd = "/msg nickserv id xxx; max_msgs = "3"; };
+  fnode  = { type = "IRC"; autosendcmd = "/msg nickserv id xxx"; max_msgs = "3"; };
+  oftc   = { type = "IRC"; autosendcmd = "/msg nickserv id xxx"; max_msgs = "3"; };
 };
 
 channels = (
