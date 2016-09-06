@@ -17,8 +17,8 @@ servers = (
 );
 
 chatnets = {
-  fnode  = { type = "IRC"; autosendcmd = "/msg nickserv id xxx; max_msgs = "3"; };
-  oftc   = { type = "IRC"; autosendcmd = "/msg nickserv id xxx; max_msgs = "3"; };
+  fnode  = { type = "IRC"; autosendcmd = "/msg nickserv id xxx"; max_msgs = "3"; };
+  oftc   = { type = "IRC"; autosendcmd = "/msg nickserv id xxx"; max_msgs = "3"; };
 };
 
 channels = (
@@ -59,7 +59,7 @@ aliases = {
   slap = "me slaps $0 around with a small 25kg Unix Manual";
   bslap = "me slaps $0 around a bit with a 'Get a Life' HOWTO";
   rtfm = "msg $C $0: http://www.catb.org/~esr/jargon/html/R/RTFM.html";
-  ddg = "msg $C $0: https://www.duckduckgo.com";
+  ddg = "msg $C https://www.duckduckgo.com/?q=$0&ia=about";
 };
 
 keyboard = (
