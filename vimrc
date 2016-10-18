@@ -7,6 +7,10 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+:filetype on
+
+:au BufNewFile,BufRead *.jrag set filetype=java
+
 " sane tabstop (for Python and other insane languages)
 :set tabstop=4
 
