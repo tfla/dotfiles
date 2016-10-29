@@ -218,3 +218,6 @@ bindsym $mod+Shift+s mode "$mode_system"
 bindsym $mod+x [urgent=latest] focus
 
 exec --no-startup-id feh  --bg-scale '/home/tfla/hypnotic-swirl-43487-2560x1440.jpg'
+
+for_window [class="Firefox"] border pixel 1
+for_window [class="URxvt"] border pixel 1
