@@ -26,7 +26,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec roxterm
+bindsym $mod+Return exec urxvt -tr -sh 40
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -145,20 +145,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"  
+#set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+#mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"  
 
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+XF86Sleep mode "$mode_system"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+#bindsym $mod+XF86Sleep mode "$mode_system"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -180,3 +180,41 @@ client.focused            #9fbff3      #506070      #dcdccc
 client.focused_inactive   #3f3f3f      #3f3f3f      #dcdccc
 client.unfocused          #3f3f3f      #3f3f3f      #dcdccc
 client.urgent             #705050      #dca3a3      #dcdccc
+
+##
+## Starting a scratchpad and moving it to a hidden window.
+##
+# Make the currently focused window a scratchpad
+#bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+#bindsym $mod+minus scratchpad show
+
+# starting a specially named term automatically 
+#exec --no-startup-id roxterm -T scratchpad -e /usr/bin/vim
+
+# move this to scratchpad, if active
+#for_window [class="xterm" instance="scratchpad"] move scratchpad
+
+set $Locker /home/tfla/.lock.sh 
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+s mode "$mode_system"
+
+# Jump to latest urgent window
+bindsym $mod+x [urgent=latest] focus
+
+exec --no-startup-id feh  --bg-scale '/home/tfla/hypnotic-swirl-43487-2560x1440.jpg'
