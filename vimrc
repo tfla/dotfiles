@@ -1,47 +1,55 @@
-" vim>vi
-set nocompatible
+"----------
+"	PREAMBLE
+"----------
+set nocompatible " be iMproved
+filetype off " required!
 
-" syntax highlight on
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+"----------
+" VUNDLE
+"----------
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-:filetype on
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vale1410/vim-minizinc'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-markdown'
 
-:au BufNewFile,BufRead *.jrag set filetype=java
+call vundle#end()
 
-" sane tabstop (for Python and other insane languages)
-:set tabstop=4
+syntax on
+filetype plugin indent on " required!
 
-" sane shiftwidth
-:set shiftwidth=4
+"----------
+" VIM SETTINGS
+"----------
+set magic                   " Enable extended regexes
+set hlsearch                " highlight searches
+set incsearch               " show the `best match so far' astyped
+set ignorecase smartcase    " make searches case-insensitive, unless they
+                            "   contain upper-case letters
 
-" autoindent
-:set autoindent
+set t_Co=256                " 256 colors terminal
+set number                  " Enable line numbers
+set showmatch               " show matching parenthesis
+set title                   " Show the filename in the window title bar
 
-" line numbers
-:se nu
+set autoindent smartindent      " auto/smart indent
+set copyindent                  " copy previous indentation on auto indent
+set softtabstop=2               " Tab key results in # spaces
+set tabstop=2                   " Tab is # spaces
+set shiftwidth=2                " The # of spaces for indenting.
 
-" lame color scheme
-:colorscheme darkblue
+"----------
+" SYNTASTIC
+"----------
 
-" match parentheses
-:set showmatch
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" colored errors and searches
-:au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-:au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-
-" Java specific stuff
-let java_highlight_all=1
-let java_highlight_debug=1
-
-let java_ignore_javadoc=1
-let java_highlight_functions=1
-let java_mark_braces_in_parens_as_errors=1
-
-" highlight strings inside C comments
-let c_comment_strings=1
-
-:hi Normal ctermfg=252 ctermbg=none
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
