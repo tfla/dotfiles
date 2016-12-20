@@ -71,10 +71,10 @@ map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
 
 " broilerplate mappings
-nnoremap ,hmtl :-1read $HOME/.vim/skel/skel.html3jwf>a
-nnoremap ,java :-1read $HOME/,vim/skel/skel.java
-nnoremap ,tex  :-1read $HOME/.vim/skel/skel.tex
-nnoremap ,p    :-1read $HOME/.vim/skel/p.tex
+nnoremap ,html :-1read $HOME/.vim/skel/skel.html<CR>3jwf>a
+nnoremap ,java :-1read $HOME/.vim/skel/skel.java<CR>
+nnoremap ,tex  :-1read $HOME/.vim/skel/skel.tex<CR>
+nnoremap ,p    :-1read $HOME/.vim/skel/p.tex<CR>
 
 "----------
 " SYNTASTIC
