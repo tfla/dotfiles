@@ -38,7 +38,7 @@ set showmatch               " show matching parenthesis
 set title                   " Show the filename in the window title bar
 
 set autoindent smartindent      " auto/smart indent
-set copyindent                  " copy previous indentation on auto indent
+"set copyindent                  " copy previous indentation on auto indent
 set softtabstop=2               " Tab key results in # spaces
 set tabstop=2                   " Tab is # spaces
 set shiftwidth=2                " The # of spaces for indenting.
@@ -69,6 +69,12 @@ endf
 
 map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
+
+" broilerplate mappings
+nnoremap ,hmtl :-1read $HOME/.vim/skel/skel.html3jwf>a
+nnoremap ,java :-1read $HOME/,vim/skel/skel.java
+nnoremap ,tex  :-1read $HOME/.vim/skel/skel.tex
+nnoremap ,p    :-1read $HOME/.vim/skel/p.tex
 
 "----------
 " SYNTASTIC
